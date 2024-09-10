@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import vn.Syaoran.dao.impl.UserDaoImpl;
 import vn.Syaoran.models.UserModel;
-
+@WebServlet(urlPatterns = {"/login"})
 public class Login_controller extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
@@ -19,7 +19,7 @@ public class Login_controller extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Forward to the registration form
-        RequestDispatcher rd = req.getRequestDispatcher("/view/login_form.html");
+        RequestDispatcher rd = req.getRequestDispatcher("/views/login_form.html");
         rd.forward(req, resp);
     }
     
@@ -37,11 +37,11 @@ public class Login_controller extends HttpServlet {
         
         if (user != null && user.getPassword().equals(password)) {
             req.setAttribute("user", username);
-            RequestDispatcher rd = req.getRequestDispatcher("view/home_page.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("views/home_page.jsp");
             rd.forward(req, resp);
         } else {
             req.setAttribute("error", "Invalid username or password.");
-            RequestDispatcher rd = req.getRequestDispatcher("/view/login_form.html");
+            RequestDispatcher rd = req.getRequestDispatcher("/views/login_form.html");
             rd.forward(req, resp);
         }
     }

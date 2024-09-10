@@ -9,13 +9,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import vn.Syaoran.dao.impl.UserDaoImpl;
 import vn.Syaoran.models.UserModel;
-
+@WebServlet(urlPatterns = {"/register"})
 public class Register_controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        RequestDispatcher rd = req.getRequestDispatcher("/view/register_form.html");
+        RequestDispatcher rd = req.getRequestDispatcher("/views/register_form.html");
         rd.forward(req, resp);
     }
 
@@ -39,7 +39,7 @@ public class Register_controller extends HttpServlet {
             if (existingUser != null) {
                 // Username exists, set an error message and forward back to registration form
                 req.setAttribute("errorMessage", "Username already exists. Please choose another one.");
-                RequestDispatcher rd = req.getRequestDispatcher("/view/register_form.html");
+                RequestDispatcher rd = req.getRequestDispatcher("/views/register_form.html");
                 rd.forward(req, resp);
             } else {
                 // Username is available, proceed with registration
@@ -54,7 +54,7 @@ public class Register_controller extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             req.setAttribute("errorMessage", "An error occurred. Please try again.");
-            RequestDispatcher rd = req.getRequestDispatcher("/view/register_form.html");
+            RequestDispatcher rd = req.getRequestDispatcher("/views/register_form.html");
             rd.forward(req, resp);
         }
     }
