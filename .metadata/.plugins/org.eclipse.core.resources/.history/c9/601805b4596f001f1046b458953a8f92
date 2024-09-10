@@ -1,0 +1,5 @@
+package vn.Syaoran.Controllers;
+
+public class HomeController {
+
+}
