@@ -10,15 +10,11 @@ public class DBConnectMySQL {
 	   private static String DRIVER = "com.mysql.cj.jdbc.Driver";
 	   private static String URL = "jdbc:mysql://localhost:3306/ltwebsct5";
 
-	   public Connection getDatabaseConnection() throws SQLException{
-	       try {
-			Class.forName(DRIVER);
-			return DriverManager.getConnection(URL,USERNAME,PASSWORD);
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	       return null;
+	   public static Connection getDatabaseConnection() throws Exception{
+
+		   Class.forName(DRIVER);
+		
+	       return DriverManager.getConnection(URL);
 	   }
 	   
 	   public static void main(String[] args) {

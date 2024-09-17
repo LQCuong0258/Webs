@@ -104,7 +104,8 @@ public class UserDaoImpl extends DBConnectMySQL implements IUserDao {
 		String sql = "SELECT * FROM users WHERE username = ? ";
 
 		try {
-			conn = new DBConnectMySQL().getDatabaseConnection();
+			new DBConnectMySQL();
+			conn = DBConnectMySQL.getDatabaseConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			rs = ps.executeQuery();
@@ -124,5 +125,16 @@ public class UserDaoImpl extends DBConnectMySQL implements IUserDao {
 		}
 		return null;
 	}
+	
+	public static void main(String[] args) {
+		
+		
+		   try {
+			   IUserDao userDao = new UserDaoImpl();
+		       System.out.println(userDao.findAll("Syaoran"));
+		   }catch(Exception e) {
+			   e.printStackTrace();
+		   }
+	   }
 
 }
