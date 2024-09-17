@@ -12,4 +12,6 @@ public interface IUserDao {
 	
 	void insert(UserModel user);
 	
+	UserModel findByUserName(String username);
+	
 }

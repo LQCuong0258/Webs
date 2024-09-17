@@ -1,82 +1,133 @@
 package vn.Syaoran.models;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 public class UserModel implements Serializable {
-	/**
-	 * 
-	 */
+	
 	private static final long serialVersionUID = 1L;
+
 	private int id;
-	private String username;
 	private String email;
-	private String fullname;
-	private String images;
-	private String password;
+	private String userName;
+	private String fullName;
+	private String passWord;
+	private String Images;
+	private int roleid;
+	private String phone;
+	private Date createdDate;
+	
+	
+	
 	public UserModel() {
 		super();
 	}
-	public UserModel(int id, String username, String email, String fullname, String images, String password) {
+
+
+	public UserModel(int id, String username, String password, String images, String fullname, String email,
+			String phone, int roleid, Date createdate) {
 		super();
 		this.id = id;
-		this.username = username;
+		this.userName = username;
+		this.passWord = password;
+		this.Images = images;
+		this.fullName = fullname;
 		this.email = email;
-		this.fullname = fullname;
-		this.images = images;
-		this.password = password;
+		this.phone = phone;
+		this.roleid = roleid;
+		this.createdDate = createdate;
 	}
-	public UserModel(String username, String email, String fullname, String images, String password) {
-		super();
-		this.username = username;
-		this.email = email;
-		this.fullname = fullname;
-		this.images = images;
-		this.password = password;
-	}
-	public UserModel(String username2, String email2, String password2) {
-		// TODO Auto-generated constructor stub
-	}
+
+
 	public int getId() {
 		return id;
 	}
+
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getFullname() {
-		return fullname;
+
+	public String getUserName() {
+		return userName;
 	}
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
-	public String getImages() {
-		return images;
+
+	public String getFullName() {
+		return fullName;
 	}
-	public void setImages(String images) {
-		this.images = images;
+
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
+
 	public String getPassword() {
-		return password;
+		return passWord;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+
+	public void setPassword(String passWord) {
+		this.passWord = passWord;
 	}
+	
+	public int getRoleid() {
+		return roleid;
+	}
+
+	public void setRoleid(int int1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	
+	public String getImages() {
+		return Images;
+	}
+
+	public void setImages(String images) {
+		Images = images;
+	}
+
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+
 	@Override
 	public String toString() {
-		return "UserModel [id="+ id +" ,username=" + username + ", email=" + email + ", fullname=" + fullname
-				+ ", images=" + images + ", password=" + password + "]";
+		return "UserModel [id=" + id + ", email=" + email + ", userName=" + userName + ", fullName=" + fullName
+				+ ", passWord=" + passWord + ", avatar=" + Images + ", roleID=" + roleid + ", phone=" + phone
+				+ ", createdDate=" + createdDate + "]";
 	}
+
+	
+	
+
+
+	
+	
+	
+	
+	
 	
 	
 	
