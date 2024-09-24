@@ -1,11 +1,13 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>vn.Syaoran</groupId>
-  <artifactId>LTWebsCT5</artifactId>
-  <version>0.1</version>
-  <packaging>war</packaging>
-  
-  <dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>vn.Syaoran</groupId>
+	<artifactId>LTWebsCT5</artifactId>
+	<version>0.1</version>
+	<packaging>war</packaging>
+
+	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
 		<dependency>
@@ -38,11 +40,18 @@
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 			<version>3.0.1</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
+		</dependency>
+
+		<!-- ... other dependencies -->
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>3.2.1</version>
 		</dependency>
 
 
@@ -74,6 +83,6 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-  
-  
+
+
 </project>

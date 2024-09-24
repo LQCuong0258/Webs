@@ -8,13 +8,13 @@ public class UserModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private int id;
-	private String email;
-	private String userName;
 	private String fullName;
+	private String userName;
+	private String email;
 	private String passWord;
 	private String Images;
-	private int roleid;
 	private String phone;
+	private int roleid;
 	private Date createdDate;
 	
 	
@@ -24,19 +24,57 @@ public class UserModel implements Serializable {
 	}
 
 
-	public UserModel(int id, String username, String password, String images, String fullname, String email,
-			String phone, int roleid, Date createdate) {
+	
+	
+	
+
+
+	
+
+
+	public UserModel(String fullName, String userName, String email, String passWord, String images, String phone,
+			int roleid, Date createdDate) {
 		super();
-		this.id = id;
-		this.userName = username;
-		this.passWord = password;
-		this.Images = images;
-		this.fullName = fullname;
+		this.fullName = fullName;
+		this.userName = userName;
 		this.email = email;
+		this.passWord = passWord;
+		Images = images;
 		this.phone = phone;
 		this.roleid = roleid;
-		this.createdDate = createdate;
+		this.createdDate = createdDate;
 	}
+
+
+
+
+
+
+
+
+
+
+	public UserModel(int id, String fullName, String userName, String email, String passWord, String images,
+			String phone, int roleid, Date createdDate) {
+		super();
+		this.id = id;
+		this.fullName = fullName;
+		this.userName = userName;
+		this.email = email;
+		this.passWord = passWord;
+		Images = images;
+		this.phone = phone;
+		this.roleid = roleid;
+		this.createdDate = createdDate;
+	}
+
+
+
+
+
+
+
+
 
 
 	public int getId() {
